@@ -1,0 +1,35 @@
+{
+    "name": "opencv_image_test",
+    "patterns": [
+        {
+            "concurrency": 1,
+            "consumer_ports": [
+                {
+                    "connected_to": [
+                        "source",
+                        "output"
+                    ],
+                    "datatype": "vision:Image",
+                    "name": "input",
+                    "port_index": 0,
+                    "porttype": 2
+                }
+            ],
+            "id": "sink",
+            "pattern_name": "OpenCvWindow"
+        },
+        {
+            "concurrency": 1,
+            "id": "source",
+            "pattern_name": "OpenCvVideoCapture",
+            "producer_ports": [
+                {
+                    "datatype": "vision:Image",
+                    "name": "output",
+                    "port_index": 0,
+                    "porttype": 1
+                }
+            ]
+        }
+    ]
+}

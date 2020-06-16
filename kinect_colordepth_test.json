@@ -1,0 +1,95 @@
+{
+    "name": "kinect_depth_test",
+    "patterns": [
+        {
+            "concurrency": 1,
+            "id": "Kinect Color",
+            "pattern_name": "KinectAzureColorOutput",
+            "producer_ports": [
+                {
+                    "datatype": "vision:Image",
+                    "name": "output",
+                    "port_index": 0,
+                    "porttype": 1
+                }
+            ]
+        },
+        {
+            "concurrency": 1,
+            "id": "Kinect Depth",
+            "pattern_name": "KinectAzureDepthOutput",
+            "producer_ports": [
+                {
+                    "datatype": "vision:Image",
+                    "name": "output",
+                    "port_index": 0,
+                    "porttype": 1
+                }
+            ]
+        },
+        {
+            "concurrency": 1,
+            "id": "Kinect IR",
+            "pattern_name": "KinectAzureIROutput",
+            "producer_ports": [
+                {
+                    "datatype": "vision:Image",
+                    "name": "output",
+                    "port_index": 0,
+                    "porttype": 1
+                }
+            ]
+        },
+        {
+            "concurrency": 1,
+            "consumer_ports": [
+                {
+                    "connected_to": [
+                        "Kinect Color",
+                        "output"
+                    ],
+                    "datatype": "vision:Image",
+                    "name": "input",
+                    "port_index": 0,
+                    "porttype": 2
+                }
+            ],
+            "id": "Color Window",
+            "pattern_name": "OpenCvWindow"
+        },
+        {
+            "concurrency": 1,
+            "consumer_ports": [
+                {
+                    "connected_to": [
+                        "Kinect Depth",
+                        "output"
+                    ],
+                    "datatype": "vision:Image",
+                    "name": "input",
+                    "port_index": 0,
+                    "porttype": 2
+                }
+            ],
+            "id": "Depth Window",
+            "pattern_name": "OpenCvWindow"
+        },
+        {
+            "concurrency": 1,
+            "consumer_ports": [
+                {
+                    "connected_to": [
+                        "Kinect IR",
+                        "output"
+                    ],
+                    "datatype": "vision:Image",
+                    "name": "input",
+                    "port_index": 0,
+                    "porttype": 2
+                }
+            ],
+            "id": "IR Window",
+            "pattern_name": "OpenCvWindow"
+        }
+    ]
+}
