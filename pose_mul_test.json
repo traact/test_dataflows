@@ -1,0 +1,83 @@
+{
+    "name": "pose_mul_test",
+    "patterns": [
+        {
+            "concurrency": 0,
+            "consumer_ports": [
+                {
+                    "connected_to": [
+                        "source",
+                        "output"
+                    ],
+                    "datatype": "spatial:Pose6D",
+                    "name": "input0",
+                    "port_index": 0,
+                    "porttype": 2
+                },
+                {
+                    "connected_to": [
+                        "source2",
+                        "output"
+                    ],
+                    "datatype": "spatial:Pose6D",
+                    "name": "input1",
+                    "port_index": 1,
+                    "porttype": 2
+                }
+            ],
+            "id": "mul1",
+            "pattern_name": "MultiplicationComponent",
+            "producer_ports": [
+                {
+                    "datatype": "spatial:Pose6D",
+                    "name": "output",
+                    "port_index": 0,
+                    "porttype": 1
+                }
+            ]
+        },
+        {
+            "concurrency": 0,
+            "consumer_ports": [
+                {
+                    "connected_to": [
+                        "mul1",
+                        "output"
+                    ],
+                    "datatype": "spatial:Pose6D",
+                    "name": "input",
+                    "port_index": 0,
+                    "porttype": 2
+                }
+            ],
+            "id": "sink",
+            "pattern_name": "Pose6DPrint"
+        },
+        {
+            "concurrency": 0,
+            "id": "source",
+            "pattern_name": "Pose6DTestSource",
+            "producer_ports": [
+                {
+                    "datatype": "spatial:Pose6D",
+                    "name": "output",
+                    "port_index": 0,
+                    "porttype": 1
+                }
+            ]
+        },
+        {
+            "concurrency": 0,
+            "id": "source2",
+            "pattern_name": "Pose6DTestSource",
+            "producer_ports": [
+                {
+                    "datatype": "spatial:Pose6D",
+                    "name": "output",
+                    "port_index": 0,
+                    "porttype": 1
+                }
+            ]
+        }
+    ]
+}

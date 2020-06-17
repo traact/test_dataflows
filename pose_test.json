@@ -1,0 +1,35 @@
+{
+    "name": "pose6d_print_test",
+    "patterns": [
+        {
+            "concurrency": 0,
+            "consumer_ports": [
+                {
+                    "connected_to": [
+                        "source",
+                        "output"
+                    ],
+                    "datatype": "spatial:Pose6D",
+                    "name": "input",
+                    "port_index": 0,
+                    "porttype": 2
+                }
+            ],
+            "id": "sink",
+            "pattern_name": "Pose6DPrint"
+        },
+        {
+            "concurrency": 0,
+            "id": "source",
+            "pattern_name": "Pose6DTestSource",
+            "producer_ports": [
+                {
+                    "datatype": "spatial:Pose6D",
+                    "name": "output",
+                    "port_index": 0,
+                    "porttype": 1
+                }
+            ]
+        }
+    ]
+}
