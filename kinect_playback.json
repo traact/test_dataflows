@@ -1,0 +1,43 @@
+{
+    "name": "kinect_playback",
+    "patterns": [
+        {
+            "concurrency": 1,
+            "consumer_ports": [
+                {
+                    "connected_to": [
+                        "source",
+                        "output"
+                    ],
+                    "datatype": "vision:Image",
+                    "name": "input",
+                    "port_index": 0,
+                    "porttype": 2
+                }
+            ],
+            "id": "sink",
+            "parameter": null,
+            "pattern_name": "OpenCvWindow",
+            "time_domain": 0
+        },
+        {
+            "concurrency": 1,
+            "id": "source",
+            "parameter": {
+                "file": {
+                    "value": "/mnt/data/data/ba_ir_data/cn01/k4a_capture.mkv"
+                }
+            },
+            "pattern_name": "KinectAzurePlayer",
+            "producer_ports": [
+                {
+                    "datatype": "vision:Image",
+                    "name": "output",
+                    "port_index": 0,
+                    "porttype": 1
+                }
+            ],
+            "time_domain": 0
+        }
+    ]
+}

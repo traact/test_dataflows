@@ -1,0 +1,160 @@
+{
+    "name": "kinect_playback_x4",
+    "patterns": [
+        {
+            "concurrency": 1,
+            "consumer_ports": [
+                {
+                    "connected_to": [
+                        "source1",
+                        "output"
+                    ],
+                    "datatype": "vision:Image",
+                    "name": "input",
+                    "port_index": 0,
+                    "porttype": 2
+                }
+            ],
+            "id": "sink1",
+            "time_domain": 0,
+            "parameter": null,
+            "pattern_name": "OpenCvWindow"
+        },
+        {
+            "concurrency": 1,
+            "id": "source1",
+            "time_domain": 0,
+            "parameter": {
+                "file": {
+                    "value": "/mnt/data/data/ba_ir_data/cn01/k4a_capture.mkv"
+                }
+            },
+            "pattern_name": "KinectAzurePlayer",
+            "producer_ports": [
+                {
+                    "datatype": "vision:Image",
+                    "name": "output",
+                    "port_index": 0,
+                    "porttype": 1
+                }
+            ]
+        },
+
+        {
+            "concurrency": 1,
+            "consumer_ports": [
+                {
+                    "connected_to": [
+                        "source2",
+                        "output"
+                    ],
+                    "datatype": "vision:Image",
+                    "name": "input",
+                    "port_index": 0,
+                    "porttype": 2
+                }
+            ],
+            "id": "sink2",
+            "time_domain": 1,
+            "parameter": null,
+            "pattern_name": "OpenCvWindow"
+        },
+        {
+            "concurrency": 1,
+            "id": "source2",
+            "time_domain": 1,
+            "parameter": {
+                "file": {
+                    "value": "/mnt/data/data/ba_ir_data/cn02/k4a_capture.mkv"
+                }
+            },
+            "pattern_name": "KinectAzurePlayer",
+            "producer_ports": [
+                {
+                    "datatype": "vision:Image",
+                    "name": "output",
+                    "port_index": 0,
+                    "porttype": 1
+                }
+            ]
+        },
+
+        {
+            "concurrency": 1,
+            "consumer_ports": [
+                {
+                    "connected_to": [
+                        "source3",
+                        "output"
+                    ],
+                    "datatype": "vision:Image",
+                    "name": "input",
+                    "port_index": 0,
+                    "porttype": 2
+                }
+            ],
+            "id": "sink3",
+            "time_domain": 2,
+            "parameter": null,
+            "pattern_name": "OpenCvWindow"
+        },
+        {
+            "concurrency": 1,
+            "id": "source3",
+            "time_domain": 2,
+            "parameter": {
+                "file": {
+                    "value": "/mnt/data/data/ba_ir_data/cn03/k4a_capture.mkv"
+                }
+            },
+            "pattern_name": "KinectAzurePlayer",
+            "producer_ports": [
+                {
+                    "datatype": "vision:Image",
+                    "name": "output",
+                    "port_index": 0,
+                    "porttype": 1
+                }
+            ]
+        },
+
+        {
+            "concurrency": 1,
+            "consumer_ports": [
+                {
+                    "connected_to": [
+                        "source4",
+                        "output"
+                    ],
+                    "datatype": "vision:Image",
+                    "name": "input",
+                    "port_index": 0,
+                    "porttype": 2
+                }
+            ],
+            "id": "sink4",
+            "time_domain": 3,
+            "parameter": null,
+            "pattern_name": "OpenCvWindow"
+        },
+        {
+            "concurrency": 1,
+            "id": "source4",
+            "time_domain": 3,
+            "parameter": {
+                "file": {
+                    "value": "/mnt/data/data/ba_ir_data/cn04/k4a_capture.mkv"
+                }
+            },
+            "pattern_name": "KinectAzurePlayer",
+            "producer_ports": [
+                {
+                    "datatype": "vision:Image",
+                    "name": "output",
+                    "port_index": 0,
+                    "porttype": 1
+                }
+            ]
+        }
+    ]
+}
